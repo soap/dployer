@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('server_providers', function (Blueprint $table) {
             $table->id();
             $table->string('label');
-            $table->string('provider_name')->default('digitalocean');
             $table->text('data');
+            $table->foreignId('provider_id')->contrained()->cascadeOnDlete();
             $table->foreignId('account_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

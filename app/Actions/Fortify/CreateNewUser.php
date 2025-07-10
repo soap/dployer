@@ -58,11 +58,9 @@ class CreateNewUser implements CreatesNewUsers
 
     protected function createAccount(string $name, string $email): Account
     {
-        $account = Account::create([
+        return Account::create([
             'name' => $name,
             'email' => $email,
         ]);
-
-        return $account;
     }
 }
